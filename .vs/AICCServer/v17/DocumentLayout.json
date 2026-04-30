@@ -1,0 +1,130 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\source\\AICCServer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D120DD33-C967-457D-94ED-CEA5E7BD394A}|AICCServer.csproj|c:\\source\\aiccserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D120DD33-C967-457D-94ED-CEA5E7BD394A}|AICCServer.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D120DD33-C967-457D-94ED-CEA5E7BD394A}|AICCServer.csproj|c:\\source\\aiccserver\\controllers\\aicccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D120DD33-C967-457D-94ED-CEA5E7BD394A}|AICCServer.csproj|solutionrelative:controllers\\aicccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D120DD33-C967-457D-94ED-CEA5E7BD394A}|AICCServer.csproj|c:\\source\\aiccserver\\helpers\\aiccdataparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D120DD33-C967-457D-94ED-CEA5E7BD394A}|AICCServer.csproj|solutionrelative:helpers\\aiccdataparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D120DD33-C967-457D-94ED-CEA5E7BD394A}|AICCServer.csproj|c:\\source\\aiccserver\\models\\aicclogentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D120DD33-C967-457D-94ED-CEA5E7BD394A}|AICCServer.csproj|solutionrelative:models\\aicclogentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D120DD33-C967-457D-94ED-CEA5E7BD394A}|AICCServer.csproj|c:\\source\\aiccserver\\models\\aiccdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D120DD33-C967-457D-94ED-CEA5E7BD394A}|AICCServer.csproj|solutionrelative:models\\aiccdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D120DD33-C967-457D-94ED-CEA5E7BD394A}|AICCServer.csproj|c:\\source\\aiccserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D120DD33-C967-457D-94ED-CEA5E7BD394A}|AICCServer.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AICCLogEntry.cs",
+              "DocumentMoniker": "C:\\source\\AICCServer\\Models\\AICCLogEntry.cs",
+              "RelativeDocumentMoniker": "Models\\AICCLogEntry.cs",
+              "ToolTip": "C:\\source\\AICCServer\\Models\\AICCLogEntry.cs",
+              "RelativeToolTip": "Models\\AICCLogEntry.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T10:45:29.762Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AICCDataParser.cs",
+              "DocumentMoniker": "C:\\source\\AICCServer\\Helpers\\AICCDataParser.cs",
+              "RelativeDocumentMoniker": "Helpers\\AICCDataParser.cs",
+              "ToolTip": "C:\\source\\AICCServer\\Helpers\\AICCDataParser.cs",
+              "RelativeToolTip": "Helpers\\AICCDataParser.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwBgAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-29T15:19:30.017Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AICCData.cs",
+              "DocumentMoniker": "C:\\source\\AICCServer\\Models\\AICCData.cs",
+              "RelativeDocumentMoniker": "Models\\AICCData.cs",
+              "ToolTip": "C:\\source\\AICCServer\\Models\\AICCData.cs",
+              "RelativeToolTip": "Models\\AICCData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-29T15:17:26.98Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\source\\AICCServer\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\source\\AICCServer\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T11:05:50.817Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\source\\AICCServer\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\source\\AICCServer\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-19T14:11:00.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AICCController.cs",
+              "DocumentMoniker": "C:\\source\\AICCServer\\Controllers\\AICCController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AICCController.cs",
+              "ToolTip": "C:\\source\\AICCServer\\Controllers\\AICCController.cs",
+              "RelativeToolTip": "Controllers\\AICCController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAEQAAABkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-19T11:56:50.081Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
