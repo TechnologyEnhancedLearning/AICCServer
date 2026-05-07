@@ -49,8 +49,8 @@ jobs:
 
       - name: 'Terraform apply'
         id: apply
+        working-directory: Terraform
         run: |
-          cd Terraform
           terraform apply -auto-approve \
             -var="resource_group_name=${{ vars.RESOURCE_GROUP_NAME }}" \
             -var="resource_group_location=${{ vars.RESOURCE_GROUP_LOCATION }}" \
@@ -59,17 +59,20 @@ jobs:
 
       - name: Terraform output
         id: tf_output
+        working-directory: Terraform
         run: |
           cd Terraform
           terraform output -json > tf_output.json
 
       - name: Read App Insights name
         id: read_ai
+        working-directory: Terraform
         run: |
           echo "AI_NAME=$(jq -r '.app_insights_name.value' tf_output.json)" >> $GITHUB_ENV
 
       - name: Get App Insights connection string
         id: get_ai_conn
+        working-directory: Terraform
         run: |
           CONNECTION=$(az monitor app-insights component show \
           --app $AI_NAME \
