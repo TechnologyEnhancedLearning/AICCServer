@@ -54,7 +54,8 @@ jobs:
           terraform apply -auto-approve \
             -var="resource_group_name=${{ vars.RESOURCE_GROUP_NAME }}" \
             -var="resource_group_location=${{ vars.RESOURCE_GROUP_LOCATION }}" \
-            -var="app_service_name=${{ vars.APP_service_name }}"
+            -var="app_service_name=${{ vars.APP_SERVICE_NAME }}" \
+            -var="app_service_sku=${{ vars.APP_SERVICE_SKU }}"
 
       - name: Terraform output
         id: tf_output
