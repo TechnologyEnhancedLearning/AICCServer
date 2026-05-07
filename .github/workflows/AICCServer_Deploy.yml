@@ -88,7 +88,6 @@ jobs:
 
       - name: Replace placeholders in appsettings.json
         run: |
-          cd src/YourProject
           envsubst < appsettings.json > appsettings.final.json
           mv appsettings.final.json appsettings.json
 
