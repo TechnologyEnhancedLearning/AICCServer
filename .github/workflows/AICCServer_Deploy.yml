@@ -69,6 +69,13 @@ jobs:
         run: |
           echo "AI_NAME=$(jq -r '.app_insights_name.value' tf_output.json)" >> $GITHUB_ENV
 
+      - name: 'Az CLI login'
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
       - name: Get App Insights connection string
         id: get_ai_conn
         working-directory: Terraform
@@ -78,13 +85,6 @@ jobs:
           --resource-group ${{ vars.RESOURCE_GROUP_NAME }} \
           --query connectionString -o tsv)
           echo "AI_CONNECTION_STRING=$CONNECTION" >> $GITHUB_ENV
-
-      - name: 'Az CLI login'
-        uses: azure/login@v1
-        with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       - name: Replace placeholders in appsettings.json
         run: |
