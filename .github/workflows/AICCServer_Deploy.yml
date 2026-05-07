@@ -18,7 +18,7 @@ jobs:
     env:
       DEPLOY_ENV: ${{ github.ref_name == 'main' && 'prod' || github.ref_name == 'CI' && 'dev' || github.ref_name == 'RC' && 'test' }}
       ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-      # ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+      ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
       ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
       AICC_SETTINGS_BASE_URL: ${{ vars.AICC_SETTINGS_BASE_URL }}
