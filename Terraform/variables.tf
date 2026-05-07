@@ -9,3 +9,7 @@ variable "resource_group_location" {
 variable "app_service_name" {
   type = string
 }
+
+variable "app_service_sku" {
+  type = string
+}
