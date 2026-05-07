@@ -1,0 +1,111 @@
+name: Deploy AICCServer
+on:
+  push:
+    branches:
+      - main
+      - CI
+      - RC
+  
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    environment: ${{ github.ref_name == 'main' && 'prod' || github.ref_name == 'CI' && 'dev' || github.ref_name == 'RC' && 'test' }}
+    name: 'Terraform AICCServer'
+    env:
+      DEPLOY_ENV: ${{ github.ref_name == 'main' && 'prod' || github.ref_name == 'CI' && 'dev' || github.ref_name == 'RC' && 'test' }}
+      ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+      # ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+      ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+      AICC_SETTINGS_BASE_URL: ${{ vars.AICC_SETTINGS_BASE_URL }}
+
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_wrapper: false  # Skip wrapper script installation
+
+      - name: 'Terraform init'
+        id: init
+        run: |
+          cd Terraform
+          terraform init "-backend-config=backend-${DEPLOY_ENV}.tfvars"
+
+      # - name: 'Terraform destroy'
+      #   id: destroy
+      #   run: |
+      #     cd Terraform
+      #     terraform destroy -auto-approve \
+      #       -var="resource_group_name=${{ vars.RESOURCE_GROUP_NAME }}" \
+      #       -var="resource_group_location=${{ vars.RESOURCE_GROUP_LOCATION }}" \
+      #       -var="app_service_name=${{ vars.APP_service_name }}"
+
+      - name: 'Terraform apply'
+        id: apply
+        run: |
+          cd Terraform
+          terraform apply -auto-approve \
+            -var="resource_group_name=${{ vars.RESOURCE_GROUP_NAME }}" \
+            -var="resource_group_location=${{ vars.RESOURCE_GROUP_LOCATION }}" \
+            -var="app_service_name=${{ vars.APP_service_name }}"
+
+      - name: Terraform output
+        id: tf_output
+        run: |
+          cd Terraform
+          terraform output -json > tf_output.json
+
+      - name: Read App Insights name
+        id: read_ai
+        run: |
+          echo "AI_NAME=$(jq -r '.app_insights_name.value' tf_output.json)" >> $GITHUB_ENV
+
+      - name: Get App Insights connection string
+        id: get_ai_conn
+        run: |
+          CONNECTION=$(az monitor app-insights component show \
+          --app $AI_NAME \
+          --resource-group ${{ vars.RESOURCE_GROUP_NAME }} \
+          --query connectionString -o tsv)
+          echo "AI_CONNECTION_STRING=$CONNECTION" >> $GITHUB_ENV
+
+      - name: 'Az CLI login'
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Replace placeholders in appsettings.json
+        run: |
+          cd src/YourProject
+          envsubst < appsettings.json > appsettings.final.json
+          mv appsettings.final.json appsettings.json
+
+  
+      - name: Build .NET app
+        run: |
+          dotnet restore
+          dotnet publish -c Release -o publish
+
+      - name: Deploy using ZIP Deploy
+        run: |
+          cd publish
+          zip -r ../app.zip .
+          cd ..
+          az webapp deploy \
+            --resource-group ${{ vars.RESOURCE_GROUP_NAME }} \
+            --name ${{ vars.APP_SERVICE_NAME }} \
+            --src-path app.zip
+
+
+
+
+
