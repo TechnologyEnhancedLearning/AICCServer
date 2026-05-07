@@ -61,7 +61,6 @@ jobs:
         id: tf_output
         working-directory: Terraform
         run: |
-          cd Terraform
           terraform output -json > tf_output.json
 
       - name: Read App Insights name
