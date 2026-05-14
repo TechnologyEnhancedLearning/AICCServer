@@ -8,6 +8,7 @@
         string? LessonStatus = null,
         string? Score = null,
         string? Time = null,
-        string? LessonLocation = null
+        string? LessonLocation = null,
+        string? RawData = null
     );
 }

@@ -34,6 +34,8 @@ namespace AICCServer.Helpers
                 var key = parts[0].Trim().ToLower();
                 var value = parts[1].Trim();
 
+                model.RawData = rawData;
+
                 // Route based on section
                 switch (currentSection)
                 {

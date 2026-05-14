@@ -89,7 +89,8 @@ namespace AICCServer.Controllers
                            LessonStatus: parsed.LessonStatus,
                            Score: parsed.Score,
                            Time: parsed.Time,
-                           LessonLocation: parsed.LessonLocation
+                           LessonLocation: parsed.LessonLocation,
+                           RawData: parsed.RawData
                         ));
                         var content = new FormUrlEncodedContent(formData);
                         var response = await client.PostAsync(lmsAICCUrl, content);
@@ -120,7 +121,8 @@ namespace AICCServer.Controllers
                                LessonStatus: parsed.LessonStatus,
                                Score: parsed.Score,
                                Time: parsed.Time,
-                               LessonLocation: parsed.LessonLocation
+                               LessonLocation: parsed.LessonLocation,
+                               RawData: parsed.RawData
                             ));
                         }
                         var content = new FormUrlEncodedContent(formData);
@@ -137,7 +139,8 @@ namespace AICCServer.Controllers
                                LessonStatus: parsed.LessonStatus,
                                Score: parsed.Score,
                                Time: parsed.Time,
-                               LessonLocation: parsed.LessonLocation
+                               LessonLocation: parsed.LessonLocation,
+                               RawData: parsed.RawData
                            ));
                         }
                     }

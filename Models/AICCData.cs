@@ -9,5 +9,6 @@
         public string Score { get; set; } = "";
         public string Time { get; set; } = "";
         public string CourseId { get; set; } = "";
+        public string RawData { get; set; } = "";
     }
 }
