@@ -7,7 +7,7 @@ terraform {
   }
   backend "azurerm" {
     resource_group_name     = "TerraformStorageRG"
-    storage_account_name    = "userprofilesa11"
+    storage_account_name    ="moodleterraformprod"
     container_name          = "tfstate"
     key                     = "AICCServer.terraform.tfstate"
   }
